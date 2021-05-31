@@ -10,20 +10,20 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class WishListService {
+public class WishListService implements WishListRepository {
 
 
     @Autowired
-    public WishListRepository wishListRepository;
+    public MongoTemplate mongoTemplate;
 
-
+    @Override
     public List<WishListDao> getAllWishList(){
-
-
-
+        return mongoTemplate.findAll(WishListDao.class);
     }
 
-
-
+    @Override
+    public WishListDao createWishList(WishListDao wishlist) {
+        return mongoTemplate.save(wishlist);
+    }
 
 }

@@ -9,19 +9,17 @@ import java.util.Date;
 
 @Document("collection = wishlist")
 public class WishListDao {
-
-
     @Id
-    private long id;
+    private String id;
     private String name;
     private String itemId;
-    private Date creationDate = new Date();
+    private String creationDate;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -41,11 +39,11 @@ public class WishListDao {
         this.itemId = address;
     }
 
-    public Date getCreationDate() {
+    public String getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
 

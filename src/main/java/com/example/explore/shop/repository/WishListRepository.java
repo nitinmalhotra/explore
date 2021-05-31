@@ -12,7 +12,9 @@ import java.util.logging.Logger;
 @Repository
 public interface WishListRepository {
 
-    public Wi
+    public List<WishListDao> getAllWishList();
+
+    public WishListDao createWishList(WishListDao wishlist);
 
 }
 
